@@ -9,7 +9,7 @@ pipeline {
         stage ('Upload to AWS'){
             steps {
                 withAWS(region: 'us-east-1', credentials: 'blueocean') {
-                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'artifacts/index.html', bucket: 'c3pipelines-devops')
+                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'artifacts/index.html', bucket: 'jenkins-project')
                 }
             }
         }
